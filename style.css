@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #363633;
+}
+button{
+    width: 18px;
+    height: 18px;
+}
+.cabecalho{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #ffff00;
+    height: 100%;
+}
+.logomarca>h2{
+    color: #363633;
+}
+#menu{
+    display:flex;
+}
+#menu>li{
+    margin: 0 5%;
+}
+#menu>li>a{
+    text-decoration: none;
+    color: #363633;
+}
