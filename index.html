@@ -3,23 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css"
-    />
-    <title>Relógio Digital</title>
+    <title>Flip Clock Digital</title>
   </head>
   <body>
     <main class="main">
       <section class="data">
         <h2 class="diaAtual"></h2>
       </section>
+
       <section class="box-relogio">
-        <div class="hora"></div>
-        <p>:</p>
-        <div class="minuto"></div>
-        <p>:</p>
-        <div class="segundo"></div>
+        <!-- Horas -->
+        <div class="flip-card" id="hora-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="numero" id="hora-front">00</div>
+            </div>
+            <div class="flip-card-back">
+              <div class="numero" id="hora-back">00</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="separador">:</div>
+
+        <!-- Minutos -->
+        <div class="flip-card" id="minuto-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="numero" id="minuto-front">00</div>
+            </div>
+            <div class="flip-card-back">
+              <div class="numero" id="minuto-back">00</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="separador">:</div>
+
+        <!-- Segundos -->
+        <div class="flip-card" id="segundo-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <div class="numero" id="segundo-front">00</div>
+            </div>
+            <div class="flip-card-back">
+              <div class="numero" id="segundo-back">00</div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <script src="script.js"></script>

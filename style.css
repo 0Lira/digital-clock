@@ -1,10 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
 .main {
   width: 100vw;
   height: 100vh;
@@ -12,103 +14,174 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: rgb(131, 58, 180);
-  background: linear-gradient(
-    90deg,
-    rgba(131, 58, 180, 1) 0%,
-    rgba(253, 29, 29, 1) 50%,
-    rgba(252, 176, 69, 1) 100%
-  );
+  background: #1a1a1a;
 }
-.box-relogio {
-  /*width: 40%;*/
-  height: 60%;
-  width: 700px;
-  /*height: 300px;*/
-  padding: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  /* From https://css.glass */
-  background: rgba(255, 255, 255, 0.03);
-  border-radius: 16px;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(1.5px);
-  -webkit-backdrop-filter: blur(1.5px);
-  border: 1px solid rgba(255, 255, 255, 0.29);
+
+.data {
+  margin-bottom: 40px;
 }
-.box-relogio > p {
-  font-size: 100px;
-  color: #ffffff;
-}
-.hora {
-  /*width: 20%;
-  height: 35%;*/
-  width: 100px;
-  height: 100px;
-  color: #000000;
-  font-size: 48px;
-  font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #000000;
-  border-radius: 10px;
-  background-color: #ffffff;
-}
-.minuto {
-  /*width: 20%;
-  height: 35%;*/
-  width: 100px;
-  height: 100px;
-  color: #000000;
-  font-size: 48px;
-  font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid #000000;
-  border-radius: 10px;
-  background-color: #ffffff;
-}
-.segundo {
-  /*width: 20%;
-  height: 35%;*/
-  width: 100px;
-  height: 100px;
-  color: #000000;
-  font-size: 48px;
-  font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  border: 2px solid #000000;
-  background-color: #ffffff;
-}
+
 .diaAtual {
   color: #ffffff;
-  font-size: 38px;
-  margin-bottom: 20px;
+  font-size: 28px;
+  font-weight: 400;
+  text-align: center;
+  opacity: 0.8;
 }
-/*@media screen and (max-width: 800px) {
-  .box-relogio {
-    width: 60%;
-    height: 35%;
-  }
-  .hora {
-    width: 25%;
-    height: 25%;
-    font-size: 28px;
-  }
-  .minuto {
-    width: 25%;
-    height: 25%;
-    font-size: 28px;
-  }
-  .segundo {
-    width: 25%;
-    height: 25%;
-    font-size: 28px;
-  }
+
+.box-relogio {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.separador {
+  font-size: 60px;
+  color: #ffffff;
+  font-weight: 700;
+  opacity: 0.7;
+  margin: 0 10px;
+}
+
+/* Flip Card Container */
+.flip-card {
+  position: relative;
+  width: 120px;
+  height: 160px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+/*.flip-card.flip .flip-card-inner {
+  transform: rotateX(90deg);
 }*/
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: linear-gradient(145deg, #2c2c2c, #1a1a1a);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+}
+
+.flip-card-back {
+  transform: rotateX(180deg);
+}
+
+/* Divisor horizontal no meio */
+.flip-card-front::before,
+.flip-card-back::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+.flip-card-front::after,
+.flip-card-back::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(1px);
+  z-index: 2;
+}
+
+.numero {
+  font-size: 72px;
+  font-weight: 900;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+/* Animação de brilho */
+.flip-card-front,
+.flip-card-back {
+  background: linear-gradient(145deg, #2c2c2c, #1a1a1a);
+  position: relative;
+}
+
+.flip-card-front::before,
+.flip-card-back::before {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0.9) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+/* Efeito de profundidade */
+.flip-card {
+  filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.5));
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .flip-card {
+    width: 100px;
+    height: 130px;
+  }
+
+  .numero {
+    font-size: 56px;
+  }
+
+  .separador {
+    font-size: 48px;
+    margin: 0 5px;
+  }
+
+  .diaAtual {
+    font-size: 24px;
+  }
+
+  .box-relogio {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .flip-card {
+    width: 80px;
+    height: 110px;
+  }
+
+  .numero {
+    font-size: 44px;
+  }
+
+  .separador {
+    font-size: 36px;
+  }
+
+  .diaAtual {
+    font-size: 20px;
+  }
+}
